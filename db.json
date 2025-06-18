@@ -1,0 +1,63 @@
+{
+    "changes": [
+    {
+        "filePath": "modernize/AS-Auth/AS-AuthMigrated.csproj",
+        "changes": {
+          "1": {
+            "originalLine": "<Project Sdk=\"Microsoft.NET.Sdk\">",
+            "convertedLine": "<Project Sdk=\"Microsoft.NET.Sdk.Web\">",
+            "changeType": "modified",
+            "version": "v1",
+            "changeMessage": "Updated project SDK to Web",
+            "author": "AI Assistant",
+            "timestamp": "2024-03-20T10:30:00Z"
+          }
+        }
+      },
+      {
+        "filePath": "modernize/AS-Auth/AuthMigrated.cs",
+        "changes": {
+          "15": {
+            "originalLine": "public class Auth {",
+            "convertedLine": "public sealed class Auth {",
+            "changeType": "modified",
+            "version": "v2",
+            "changeMessage": "Made Auth class sealed for better encapsulation",
+            "author": "AI Assistant",
+            "timestamp": "2024-03-20T10:30:00Z"
+          },
+          "42": {
+            "originalLine": "private readonly ILogger _logger;",
+            "convertedLine": "private readonly ILogger<Auth> _logger;",
+            "changeType": "modified",
+            "version": "v2",
+            "changeMessage": "Updated logger to use generic type for better type safety",
+            "author": "AI Assistant",
+            "timestamp": "2024-03-20T10:30:00Z"
+          }
+        }
+      },
+      {
+        "filePath": "modernize/AS-Auth/DateTimeOffsetProviderMigrated.cs",
+        "changes": {
+          "8": {
+            "originalLine": "public DateTime GetCurrentTime()",
+            "convertedLine": "public DateTimeOffset GetCurrentTime()",
+            "changeType": "modified",
+            "version": "v1",
+            "changeMessage": "Updated return type to DateTimeOffset for better timezone handling",
+            "author": "AI Assistant",
+            "timestamp": "2024-03-20T10:30:00Z"
+          }
+        }
+      }
+    ],
+    "fileMapping": {
+        "modernize/AS-Auth/AuthMigrated.cs": "legacy_code/AS-Auth/Auth.cs",
+        "modernize/AS-Auth/DateTimeOffsetProviderMigrated.cs": "legacy_code/AS-Auth/DateTimeOffsetProvider.cs",
+        "modernize/AS-Auth/GuidProviderMigrated.cs": "legacy_code/AS-Auth/GuidProvider.cs",
+        "modernize/AS-Auth/KeyUtilMigrated.cs": "legacy_code/AS-Auth/KeyUtil.cs",
+        "modernize/AS-Auth/READMEMigrated.md": "legacy_code/AS-Auth/README.md",
+        "modernize/AS-Auth/AS-AuthMigrated.csproj": "legacy_code/AS-Auth/AS-Auth.csproj"
+      }
+}
